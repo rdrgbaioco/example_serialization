@@ -1,26 +1,34 @@
 
 
 class User {
-  String? createdAt;
-  String? name;
-  String? email;
-  String? id;
+  User({
+    this.id = '',
+    this.createdAt = '',
+    this.name = '',
+    this.email = '', 
+  });
 
-  User({this.createdAt, this.name, this.email, this.id});
+  final String id;
+  final String createdAt;
+  final String name;
+  final String email;
 
-  User.fromJson(Map<String, dynamic> json) {
-    createdAt = json['createdAt'];
-    name = json['name'];
-    email = json['email'];
-    id = json['id'];
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json['id'] as String,
+      createdAt: json['createdAt'] as String,
+      name: json['name'] as String,
+      email: json['email'] as String,
+    );
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['createdAt'] = createdAt;
-    data['name'] = name;
-    data['email'] = email;
-    data['id'] = id;
-    return data;
+    return {
+      'id': id,
+      'createdAt': createdAt,
+      'name': name,
+      'email': email,
+    };
   }
 }

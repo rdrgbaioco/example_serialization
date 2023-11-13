@@ -1,5 +1,5 @@
 import 'package:example_serialization/source/models/user.dart';
-import 'package:example_serialization/source/repository/repository.dart';
+import 'package:example_serialization/source/repository/repository_impl.dart';
 import 'package:flutter/material.dart';
 
 class HomeApp extends StatefulWidget {
